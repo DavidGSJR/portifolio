@@ -198,10 +198,9 @@ header.sticky {
     line-height: 42px;
 }
 .exp-area p span {
-    color: var(--other-color);
-    font-size: var(--p-font);
+    color: var(--main-color);
     font-weight: 400;
-    margin-left: 8px;
+    font-size: 17px;
 }
 
 .center-text {
@@ -210,6 +209,106 @@ header.sticky {
 .center-text h2 {
     font-size: var(--h2-font);
 }
+
+/* Skills Section */
+.skills {
+    background: var(--bg-color);
+}
+
+.skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-category {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--main-color);
+    transition: all 0.5s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px var(--main-color);
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(19, 187, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(19, 187, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: var(--main-color);
+    min-width: 40px;
+}
+
+.skill-item span {
+    font-weight: 600;
+    color: var(--text-color);
+    flex: 1;
+}
+
+/* Responsive Skills */
+@media (max-width: 950px) {
+    .skills-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    .skill-item {
+        padding: 0.8rem;
+    }
+
+    .skill-item i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 470px) {
+    .skill-category h3 {
+        font-size: 1.3rem;
+    }
+
+    .skill-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* Services Section */
 .services-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -276,8 +375,9 @@ header.sticky {
     margin-top: 4.2rem;
 }
 .row img {
-    height: auto;
+    height: 200px;
     width: 100%;
+    object-fit: cover;
     border-radius: 28px;
     margin-bottom: 1.4rem;
 }
